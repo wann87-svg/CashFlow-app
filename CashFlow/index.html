@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashFlow - Kelola Keuangan Anda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>CashFlow</h1>
+
+        <div class="currency-selection">
+            <label for="currency-select">Pilih Mata Uang:</label>
+            <select id="currency-select">
+                <option value="IDR">Rupiah Indonesia (IDR)</option>
+                <option value="USD">Dolar Amerika Serikat (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="JPY">Yen Jepang (JPY)</option>
+            </select>
+        </div>
+
+        <div class="balance-summary">
+            <div class="card">
+                <h3>Saldo Total</h3>
+                <p id="balance">Rp 0</p>
+            </div>
+            <div class="card income">
+                <h3>Pemasukan</h3>
+                <p id="income">Rp 0</p>
+            </div>
+            <div class="card expense">
+                <h3>Pengeluaran</h3>
+                <p id="expense">Rp 0</p>
+            </div>
+        </div>
+
+        <div class="transaction-form-section">
+            <h2>Tambah Transaksi Baru</h2>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="description">Deskripsi:</label>
+                    <input type="text" id="description" placeholder="Contoh: Gaji bulanan, Beli kopi" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Jumlah:</label>
+                    <input type="text" id="amount" placeholder="Contoh: 50.000" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Tanggal:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Waktu:</label>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Jenis:</label>
+                    <select id="type" required>
+                        <option value="income">Pemasukan</option>
+                        <option value="expense">Pengeluaran</option>
+                    </select>
+                </div>
+                <button type="submit">Tambah Transaksi</button>
+            </form>
+        </div>
+
+        <div class="transaction-list-section">
+            <h2>Riwayat Transaksi</h2>
+            <ul id="transaction-list">
+                <li class="empty-list-message">Belum ada transaksi. Tambahkan yang pertama!</li>
+            </ul>
+            <button id="clear-all" class="clear-button">Hapus Semua Transaksi</button>
+            <button id="download-transactions" class="clear-button" style="background-color: #007bff; margin-top: 15px;">Unduh Riwayat (CSV)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

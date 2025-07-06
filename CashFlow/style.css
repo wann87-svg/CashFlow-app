@@ -1,0 +1,323 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.6em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.currency-selection {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.currency-selection label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #555;
+}
+
+.currency-selection select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.currency-selection select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.balance-summary {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.balance-summary .card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.balance-summary .card:hover {
+    transform: translateY(-3px);
+}
+
+.balance-summary .card p {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 5px 0 0;
+    color: #2c3e50;
+}
+
+.balance-summary .card.income p {
+    color: #28a745; /* Green */
+}
+
+.balance-summary .card.expense p {
+    color: #dc3545; /* Red */
+}
+
+.transaction-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+    width: calc(100% - 22px);
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.clear-button {
+    background-color: #dc3545;
+    margin-top: 20px;
+}
+
+.clear-button:hover {
+    background-color: #c82333;
+}
+
+.transaction-list-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.transaction-list-section li {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.transaction-list-section li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-list-section li.expense-item {
+    border-left: 5px solid #dc3545;
+}
+
+.transaction-list-section li.income-item {
+    border-left: 5px solid #28a745;
+}
+
+.transaction-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 15px;
+}
+
+.transaction-details .text {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+    word-break: break-word;
+}
+
+.transaction-details .date {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 3px;
+}
+
+.transaction-list-section li .amount {
+    font-weight: bold;
+    font-size: 1.1em;
+    white-space: nowrap;
+}
+
+.transaction-list-section li.expense-item .amount {
+    color: #dc3545;
+}
+
+.transaction-list-section li.income-item .amount {
+    color: #28a745;
+}
+
+.delete-btn {
+    background-color: #ccc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.delete-btn:hover {
+    background-color: #bbbbbb;
+    transform: scale(1.05);
+}
+
+.empty-list-message {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .balance-summary {
+        flex-direction: column;
+    }
+
+    .balance-summary .card {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="date"],
+    .form-group select {
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+
+    .transaction-list-section li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .transaction-list-section li .amount {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        align-self: flex-end;
+    }
+
+    .delete-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
